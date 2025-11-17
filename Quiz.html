@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   	<link rel="stylesheet" href="W3.css">
+                <style>
+                    h1, h2, h3, p, label {
+                        font-family: 'Times New Roman', Times, serif
+                    }
+					p, h2, h3, label {
+						color:#673ab7
+					}
+                </style>	
+  </head>
+  <body>
+<div class="w3-container w3-deep-purple" id="main menu">
+				<div class="w3-quarter w3-center" id="HomePage">
+					<h1><a href="index.html">Home</a></h1>
+				</div>
+				<div class="w3-quarter w3-center" id="Artists">
+					<h1><a href="TopicPage1.html">Artists</a></h1>
+				</div>
+				<div class="w3-quarter w3-center" id="Resources">
+					<h1><a href="RefNResource.html">Resources</a></h1>
+				</div>
+				<div class="w3-quarter w3-center" id="About Me">
+					<h1><a href="AboutPage.html">About ME</a></h1>
+				</div>
+                <div class="w3-quarter w3-center" id="Quiz Page">
+					<h1><a href="Quiz.html">Quiz</a></h1>
+				</div>
+			</div>
+
+
+		<h2 class="">Art Quiz!</h2>
+
+<form id="quizForm">
+
+    <!-- Fill in the blank question -->
+    <div class="question">
+        <p><strong>1. Fill in the blank:</strong><br>
+        WHat is the nationality of Gustave Corbet</p>
+        <input type="text" id="q1" placeholder="Type your answer here...">
+    </div>
+
+    <!-- MULTIPLE CHOICE (ONE CORRECT) -->
+    <div class="question">
+        <p><strong>2. What was one of Gustave's main mediums</strong></p>
+        <label><input type="radio" name="q2" value="Oil Paint">Oil Paint</label><br>
+        <label><input type="radio" name="q2" value="StoryB"> Storyboarding Tools</label><br>
+        <label><input type="radio" name="q2" value="DigitalP"> Digital painting</label><br>
+    </div>
+
+    <div class="question">
+        <p><strong>3. Which studio did Ethan Becker work with?</strong></p>
+        <label><input type="radio" name="q3" value="StudioG"> Studio Ghilbi</label><br>
+        <label><input type="radio" name="q3" value="Para"> Paramount</label><br>
+        <label><input type="radio" name="q3" value="DreamW"> DreamWorks</label><br>
+    </div>
+
+    <div class="question">
+        <p><strong>4. What is the death year of Jean-Honore Fragonard?</strong></p>
+        <label><input type="radio" name="q4" value="1307"> 1307</label><br>
+        <label><input type="radio" name="q4" value="1806"> 1806</label><br>
+        <label><input type="radio" name="q4" value="2003"> 2003</label><br>
+    </div>
+
+    <!-- MULTI-SELECTION -->
+    <div class="question">
+        <p><strong>5. Which of the following are digital art mediums? (Select all that apply)</strong></p>
+        <label><input type="checkbox" name="q5" value="DigitalT"> Digital Tablet</label><br>
+        <label><input type="checkbox" name="q5" value="AnimationS"> Animation software</label><br>
+        <label><input type="checkbox" name="q5" value="Charcoals"> Charcoals and pencils</label><br> <!-- Incorrect -->
+        <label><input type="checkbox" name="q5" value="VideoEdit"> Video Editing Tools</label><br>
+    </div>
+
+</form>
+
+<button onclick="submitQuiz()">Submit Quiz</button>
+
+<div id="result"></div>
+
+<script>
+function submitQuiz() {
+    let score = 0;
+    let total = 5;
+
+    // Q1 - Fill in the blank
+    let q1 = document.getElementById("q1").value.trim().toLowerCase();
+    if (q1 === "French") score++;
+
+    // Q2 - Radio
+    let q2 = document.querySelector("input[name='q2']:checked");
+    if (q2 && q2.value === "Oil Paint") score++;
+
+    // Q3 - Radio
+    let q3 = document.querySelector("input[name='q3']:checked");
+    if (q3 && q3.value === "DreamW") score++;
+
+    // Q4 - Radio
+    let q4 = document.querySelector("input[name='q4']:checked");
+    if (q4 && q4.value === "1806") score++;
+
+    // Q5 - Multi-select
+    // Correct answers: Python, JavaScript, C#
+    let q5 = Array.from(document.querySelectorAll("input[name='q5']:checked"))
+                  .map(x => x.value);
+
+    let correctQ5 = ["DigitalT", "AnimationS", "VideoEdit"];
+
+    if (q5.length === correctQ5.length &&
+        q5.every(val => correctQ5.includes(val))) {
+        score++;
+    }
+
+    // OUTPUT RESULT
+    document.getElementById("result").textContent =
+        `You scored ${score} out of ${total}.`;
+}
+</script>
+
+  </body>
+</html>
