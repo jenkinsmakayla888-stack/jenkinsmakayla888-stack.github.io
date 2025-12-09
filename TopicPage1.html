@@ -81,6 +81,42 @@
 			.gallery-item:hover .overlay {
     			opacity: 1;
 			}
+
+		.flip-card {
+    width: 300px;          /* set card size */
+    height: 400px;
+    perspective: 1000px;   /* enables 3D */
+    margin: 20px auto;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* hides mirror side */
+    border-radius: 8px;
+}
+
+.flip-front {
+    z-index: 2;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
 </style>
 
 
@@ -121,7 +157,7 @@
 	</div>
 
 	
-	<div class="w3-padding" id="Intro">
+	<div class="w3-container w3-padding" id="Intro">
         <h3 class="w3-center w3-padding" style="color:#673ab7;">
 			Gustave Courbet (1819–1877) was a French painter and a leading figure in the Realist movement of the 19th century. 
 						Born in Ornans, France, Courbet rejected the idealized styles of Romanticism and instead sought to depict the world as it truly was. 
@@ -141,7 +177,8 @@
 		<h1 class="w3-center w3-text-white" style="background-color: #673ab7;">Popular Works</h1>
 
 	</div>
-		<div class="gallery">
+
+	<div class="gallery">
 
     		<div class="gallery-item">
         		<img src="bather-sleeping-by-a-brookCourbet.jpg">
@@ -173,9 +210,71 @@
         		<div class="overlay">The Desperate Man</div>
     		</div>
 
-		</div>
+	</div>
 
-	
+		<div class="w3-row-padding w3-center">
+
+  <div class="w3-third">
+    <div class="flip-card w3-card">
+      <div class="flip-inner">
+        <div class="flip-front w3-light-grey w3-card">
+          <h3 class="w3-center">Card 1</h3>
+          <img src="image1.jpg" style="width:100%">
+        </div>
+        <div class="flip-back w3-dark-grey w3-card w3-display-container">
+          <div class="w3-display-middle">
+            <p>More info about Card 1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="flip-card w3-card">
+      <div class="flip-inner">
+        <div class="flip-front w3-light-grey w3-card">
+          <h3 class="w3-center">Card 2</h3>
+          <img src="image2.jpg" style="width:100%">
+        </div>
+        <div class="flip-back w3-dark-grey w3-card w3-display-container">
+          <div class="w3-display-middle">
+            <p>More info about Card 2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="flip-card w3-card">
+      <div class="flip-inner">
+        <div class="flip-front w3-light-grey w3-card">
+          <h3 class="w3-center">Card 3</h3>
+          <img src="image3.jpg" style="width:100%">
+        </div>
+        <div class="flip-back w3-dark-grey w3-card w3-display-container">
+          <div class="w3-display-middle">
+            <p>More info about Card 3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+	<div class="w3-deep-purple w3-third">
+						<h2 class="w3-center">Primary Mediums</h2>
+							<ul>
+								<li>Oil Paint</li>
+								<li>Canvas</li>
+								<li>Palette knife</li>
+								<li>Charcoal and graphite</li>
+								<li>Occasional lithography</li>
+							</ul>
+					</div>
+				</div>
 </body>
 
 </html>

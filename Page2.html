@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-	<html>
-		<head>
-		<link rel="stylesheet" href="W3.css">
-		<style>
-                  h1, h2, h3, p, a {
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="W3.css">
+
+	<style>
+		 h1, h2, h3, p, a, button {
                         font-family: 'Times New Roman', Times, serif
                     }
 
@@ -13,35 +17,149 @@
                     align-items: center;
                 }
 
-                </style>	
-		</head>		
-		 </head>
- 
-		 <body>
-			<div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main menu">
-					<a href="index.html" class="w3-bar-item w3-button">Home</a>
-					<a href="TopicPage1.html"class="w3-bar-item w3-button" >Artists</a>
-					<a href="RefNResource.html"class="w3-bar-item w3-button" >Resources</a>
-					<a href="AboutPage.html" class="w3-bar-item w3-button">About ME</a>
-					<a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
-			</div>
+                .w3-dropdown-hover {
+                    position: relative;
+                }
+
+                .w3-dropdown-content {
+                    z-index: 9999;
+                }
                 
-		
-            <h1 class="w3-container w3-center w3-deep-purple">Ethan Becker</h1>
-		
-			<div>
-				<img src="EthanBPhoto.png" alt="A photo of a smiling Ethan Becker during an interview" style="width:378px;height:400px; display:block;margin: auto;">	
-			</div>
+                .center-nav .w3-dropdown-hover {
+                    display: inline-block !important;
+                }               
+
 				
-				<br>
+				/* Masonry column layout */
+				.gallery {
+    				column-count: 3;
+    				column-gap: 15px;
+				}
 
-				<div class="w3-flex" style="gap: 8px; align-items: flex-start;">
+				/* Responsive behavior */
+				@media (max-width: 1000px) {
+    			.gallery { column-count: 2; }
+				}	
 
-					<div class="w3-deep-purple w3-third">
+				@media (max-width: 600px) {
+    .gallery { column-count: 1; }
+				}
 
-						<h2 class="w3-center">About</h2>
-						<h5 style="align-content: baseline;">
-						Ethan Becker is an American visual development artist, storyteller, and animator originally from southeast Texas. 
+				/* Image container */
+				.gallery-item {
+    			position: relative;
+   				margin-bottom: 15px;
+    			break-inside: avoid;
+				}
+
+			/* The artwork images */
+			.gallery-item img {
+    		width: 100%;
+    		display: block;
+			}
+
+			/* Hover overlay (gray tint + centered text) */
+			.overlay {
+    			position: absolute;
+    			top: 0;
+    			left: 0;
+    			width: 100%;
+    			height: 100%;
+    			background: rgba(80, 80, 80, 0.65); /* gray tint */
+    			color: white;
+    			display: flex;
+    			justify-content: center;
+    			align-items: center;
+    			font-size: 20px;
+    			opacity: 0;
+    			transition: opacity 0.35s ease;
+    			text-align: center;
+    			padding: 10px;
+			}
+
+			/* Reveal overlay on hover */
+			.gallery-item:hover .overlay {
+    			opacity: 1;
+			}
+
+		.flip-card {
+    width: 300px;          /* set card size */
+    height: 400px;
+    perspective: 1000px;   /* enables 3D */
+    margin: 20px auto;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s ease;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* hides mirror side */
+    border-radius: 8px;
+}
+
+.flip-front {
+    z-index: 2;
+}
+
+.flip-back {
+    transform: rotateY(180deg);
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+	<div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main-menu">
+
+    	<a href="index.html" class="w3-bar-item w3-button">Home</a>
+
+    	<div class="w3-dropdown-hover">
+        	<button class="w3-button">Artists ▾</button>
+        	<div class="w3-dropdown-content w3-bar-block w3-card-4">
+            	<a href="TopicPage1.html" class="w3-bar-item w3-button">Gustave Courbet</a>
+            	<a href="Page2.html" class="w3-bar-item w3-button">Ethan Becker</a>
+        	</div>
+    	</div>
+
+    	<a href="RefNResource.html" class="w3-bar-item w3-button">Resources</a>
+    	<a href="AboutPage.html" class="w3-bar-item w3-button">About Me</a>
+    	<a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
+	</div>
+
+	<div class="w3-display-container w3-center">
+		<img src="EthanBPhoto.png" alt="Animator and artists Ethan Becker" style="width:100%; height: 400px;; object-fit: cover; object-position: center 25%;">
+
+		 <div style="
+        	position:absolute;
+        	top:0; left:0;
+        	width:100%; height:400px;
+        	background:rgba(0,0,0,0.45);   /* adjust darkness */">
+		</div>
+
+		<div class="w3-display-middle w3-container w3-text-white">
+			<h1 class="w3-xxlarge">Ethan Becker</h1>
+		</div>
+	</div>
+
+	
+	<div class="w3-container w3-padding" id="Intro">
+        <h3 class="w3-center w3-padding" style="color:#673ab7;">
+			Ethan Becker is an American visual development artist, storyteller, and animator originally from southeast Texas. 
 						He was inspired early on by Studio Ghibli films, nature, and fantasy worlds, which led him to pursue art as a profession. 
 						Becker attended high school art programs, won a scholarship to a community college, and later studied at the Concept Design Academy in Pasadena
 						<br>
@@ -49,85 +167,102 @@
 						Professionally, Ethan has worked on shows like Voltron: Legendary Defender and Batman: The Long Halloween, and with studios such as DreamWorks TV, Netflix, and Warner Bros. 
 						He’s also known for his teaching and content creation—he shares his process, critiques, and art tips heavily through YouTube and other online platforms, 
 						helping aspiring artists improve in design, environment art, and storytelling.
-						</h5>
-					</div>
+        </h3>
+    </div>
 
-					<div class="w3-deep-purple w3-third">
-						<h2 class="w3-center">Primary Mediums</h2>
-							<ul>
-								<li>Digital Painting</li>
-								<li>2D animation software</li>
-								<li>Storyboarding tools</li>
-								<li>Sketching and drawing</li>
-								<li>Video editing and motion graphics</li>
-							</ul>
-					</div>
-				</div>
-             
+	
+	<div class="w3-container">
+		<h1 class="w3-center w3-text-white" style="background-color: #673ab7;">Popular Works</h1>
 
-			
+	</div>
 
-       
-       
-		</body>
-	</html>
-<!DOCTYPE html>
-	<html>
-		<head>
-		<link rel="stylesheet" href="W3.css">
-		<style>
-                    h1, h2, h3, p, a {
-                        font-family: 'Times New Roman', Times, serif
-                    }
+	<div class="gallery">
 
-                .center-nav {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+    		<div class="gallery-item">
+        		<img src="GirlwithCurls.jpeg">
+        		<div class="overlay">Untilted</div>
+    		</div>
 
-                </style>	
-		</head>		
-		 </head>
- 
-		 <body>
-			<div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main menu">
-					<a href="index.html" class="w3-bar-item w3-button">Home</a>
-					<a href="TopicPage1.html"class="w3-bar-item w3-button" >Artists</a>
-					<a href="RefNResource.html"class="w3-bar-item w3-button" >Resources</a>
-					<a href="AboutPage.html" class="w3-bar-item w3-button">About ME</a>
-					<a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
-			</div>
-                
-		
-            <h1 class="w3-container w3-center w3-deep-purple">Gustave Courbet</h1>
-		
-			<div>
-				<img src="gustave-courbet-mansell-collection.jpg" alt="An old black and white portrait photo of Gustave Courbet" style="width:378px;height:400px; display:block;margin: auto;">	
-			</div>
-				
-				<br>
+    		<div class="gallery-item">
+       	 		<img src="Captura de pantalla 2025-12-09 170231.png">
+        		<div class="overlay">Bouquet of Flowers (1862)</div>
+    		</div>
 
-				<div class="w3-flex" style="gap: 8px; align-items: flex-start;">
+    		<div class="gallery-item">
+        		<img src="Captura de pantalla 2025-12-09 170327.png">
+        		<div class="overlay">Peasant Wearing Madras</div>
+    		</div>
 
-					<div class="w3-deep-purple w3-third">
+    		<div class="gallery-item">
+        		<img src="EthanBecker.jpg">
+        		<div class="overlay">The Approaching Storm</div>
+    		</div>
 
-						<h2 class="w3-center">About</h2>
-						<h5 style="align-content: baseline;">
-						Gustave Courbet (1819–1877) was a French painter and a leading figure in the Realist movement of the 19th century. 
-						Born in Ornans, France, Courbet rejected the idealized styles of Romanticism and instead sought to depict the world as it truly was. 
-						His paintings often portrayed ordinary people and rural life with unflinching honesty, challenging traditional artistic conventions of beauty and subject matter. 
-						Works like The Stone Breakers (1849) and A Burial at Ornans (1849–1850) exemplify his commitment to realism and social commentary.
-						<br>
-						<br>
-						Courbet’s bold style and outspoken political views made him both influential and controversial. 
-						During the 1871 Paris Commune, he became involved in revolutionary politics, which later led to his imprisonment and exile in Switzerland. 
-						Despite his turbulent later years, Courbet’s legacy endures as a pioneer who paved the way for modern art by emphasizing truth, individuality, 
-						and the artist’s freedom to represent reality without idealization.
-						</h5>
-					</div>
+    		<div class="gallery-item">
+        		<img src="Captura de pantalla_9-12-2025_174639_www.instagram.com.jpeg">
+        		<div class="overlay">The Wounded Man</div>
+    		</div>
 
-					<div class="w3-deep-purple w3-third">
+			<div class="gallery-item">
+        		<img src="Captura de pantalla_9-12-2025_175150_www.instagram.com.jpeg">
+        		<div class="overlay">The Desperate Man</div>
+    		</div>
+
+	</div>
+
+		<div class="w3-row-padding w3-center">
+
+  <div class="w3-third">
+    <div class="flip-card w3-card">
+      <div class="flip-inner">
+        <div class="flip-front w3-light-grey w3-card">
+          <h3 class="w3-center">Card 1</h3>
+          <img src="image1.jpg" style="width:100%">
+        </div>
+        <div class="flip-back w3-dark-grey w3-card w3-display-container">
+          <div class="w3-display-middle">
+            <p>More info about Card 1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="flip-card w3-card">
+      <div class="flip-inner">
+        <div class="flip-front w3-light-grey w3-card">
+          <h3 class="w3-center">Card 2</h3>
+          <img src="image2.jpg" style="width:100%">
+        </div>
+        <div class="flip-back w3-dark-grey w3-card w3-display-container">
+          <div class="w3-display-middle">
+            <p>More info about Card 2</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-third">
+    <div class="flip-card w3-card">
+      <div class="flip-inner">
+        <div class="flip-front w3-light-grey w3-card">
+          <h3 class="w3-center">Card 3</h3>
+          <img src="image3.jpg" style="width:100%">
+        </div>
+        <div class="flip-back w3-dark-grey w3-card w3-display-container">
+          <div class="w3-display-middle">
+            <p>More info about Card 3</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+	<div class="w3-deep-purple w3-third">
 						<h2 class="w3-center">Primary Mediums</h2>
 							<ul>
 								<li>Oil Paint</li>
@@ -138,10 +273,6 @@
 							</ul>
 					</div>
 				</div>
-             
+</body>
 
-	   
-
-       
-       
-		</body>
+</html>
