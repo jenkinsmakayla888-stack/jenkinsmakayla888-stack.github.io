@@ -3,7 +3,7 @@
   <head>
    <link rel="stylesheet" href="W3.css">
    <style>
-	  h1, h2, h3, p, a {
+	  h1, h2, h3, p, a, button {
                         font-family: 'Times New Roman', Times, serif
                     }
 
@@ -13,16 +13,155 @@
                     align-items: center;
                 }
 
+                .w3-dropdown-hover {
+                    position: relative;
+                }
+
+                .w3-dropdown-content {
+                    z-index: 9999;
+                }
+                
+                .center-nav .w3-dropdown-hover {
+                    display: inline-block !important;
+                }       
+                
+                 body {
+            font-family: 'Times New Roman', Times, serif;
+            background: #fafafa;
+        }
+
+        .center-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Page Title */
+        h1 {
+          font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            color: #673ab7;
+            margin-top: 40px;
+            font-size: 36px;
+        }
+
+        /* Main content container */
+        .about-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Section headers */
+        .section-title {
+            color: #4a148c;
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+       
+        .about-section {
+            color: #555;
+            font-size: 18px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+       
+        /* Flex layout for image + intro */
+        .intro-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .intro-text {
+            flex: 1;
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 700px) {
+            h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 22px;
+            }
+        }
    </style>	
   </head>
   <body>
-        <div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main menu">
-					<a href="index.html" class="w3-bar-item w3-button">Home</a>
-					<a href="TopicPage1.html"class="w3-bar-item w3-button" >Artists</a>
-					<a href="RefNResource.html"class="w3-bar-item w3-button" >Resources</a>
-					<a href="AboutPage.html" class="w3-bar-item w3-button">About ME</a>
-					<a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
-		</div>
-                
+        
+		  <div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main-menu">
+
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+
+    <div class="w3-dropdown-hover">
+        <button class="w3-button">Artists ▾</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="TopicPage1.html" class="w3-bar-item w3-button">Gustave Courbet</a>
+            <a href="Page2.html" class="w3-bar-item w3-button">Ethan Becker</a>
+        </div>
+    </div>
+
+    <a href="RefNResource.html" class="w3-bar-item w3-button">Resources</a>
+    <a href="AboutPage.html" class="w3-bar-item w3-button">About Me</a>
+    <a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
+
+</div>
+          
+
+ 
+    
+    <h1>About Me</h1>
+
+    <!-- Main content -->
+    <div class="about-container">
+
+       
+        <div class="intro-section">
+
+            <div class="intro-text">
+                <h2 class="section-title">Makayla Jenkins</h2>
+                <p class="about-section">
+                    I'm a IT major with minors in cybersecurity and Spanish here at KSU
+                </p>
+            </div>
+        </div>
+
+        <hr>
+
+      
+        <h2 class="section-title">Background</h2>
+        <p class="about-section">
+            This project was my love letter to art. Real art. I wanted to highlight some of my biggest inspirations as a creative, and in doing 
+            so hope that I am introducing others to these talanted people, with different styles and mediums. Anyone can do art. It's the message
+            I hope you take away from this website. With the rise of AI generated images (I refuse to call them art), art has lost its soul and 
+            is slowly becoming only a comodity. Not a skill, or a process, but something to be quickly and cheaply mass produced and absorbed.
+            Like fast food. 
+        </p>
+
+        <hr>
+
+      
+        <h2 class="section-title">My Interests</h2>
+        <p class="about-section">
+            As an artist myself, I have gravitated to character design and portraits, as obvious as it is with my selection of artists to highlight. The 
+            capturing of people is something I feel is a bit sacred. To be able to create something that captures a bit of the esssence of someone is 
+            very powerful. 
+
+            I love traditional and digital mediums of art, including oil pastels, acylic paints, watercolor paints, and just regular pencil and paper.
+        </p>
+
+        <hr>
+
+       
+    </div>
+
   </body>
 </html>

@@ -43,14 +43,14 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                opacity: 0;                  /* hidden by default */
-                transition: opacity 3s ease; /* smooth fade */
-                z-index: 0;                  /* behind text */
+                opacity: 0;                 
+                transition: opacity 3s ease; 
+                z-index: 0;                 
                 }
 
                 .mySlides.active {
                 opacity: 1;
-                z-index: 0;                  /* behind text */
+                z-index: 0;                  
                 }
 
                 /* Dark overlay */
@@ -72,15 +72,14 @@
                 /* Force the images to be the same size */
                 .artist-img {
                     width: 100%;
-                    height: 250px;           /* Adjust height if needed */
-                    object-fit: cover;       /* Crop nicely */
+                    height: 250px;          
+                    object-fit: cover;      
                     border-radius: 6px;
                     display: block;
                 }
 
-/* Keep grid neat */
                 .artist-grid .artist-card {
-                    width: 24%;              /* Four across */
+                    width: 24%;             
                     display: inline-block;
                     margin: 0.5%;
                     position: relative;
@@ -144,6 +143,7 @@
     <a href="RefNResource.html" class="w3-bar-item w3-button">Resources</a>
     <a href="AboutPage.html" class="w3-bar-item w3-button">About Me</a>
     <a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
+    <a href="KeyConcepts.html" class="w3-bar-item w3-button">Key Concepts</a>
 
 </div>
 
@@ -167,30 +167,6 @@
 
 </div>
 
-
-                <script>
-                    
-                    let slideIndex = 0;
-                    const slides = document.getElementsByClassName("mySlides");
-
-                    function carousel() {
-                    // Remove active class from all slides
-                    for (let i = 0; i < slides.length; i++) {
-                    slides[i].classList.remove("active");
-                    }
-
-                    // Show current slide
-                    slideIndex++;
-                    if (slideIndex > slides.length) { slideIndex = 1; }
-                    slides[slideIndex - 1].classList.add("active");
-
-                    setTimeout(carousel, 5000); // 5 seconds per slide
-                    }
-
-                    carousel();
-
-           
-                </script>
 
             
 
@@ -293,6 +269,7 @@
                     <a href="https://ksuweb.github.io/IT3203/">IT 3203</a> </p>
             </div>
 
+            <script src="slideshow.js"></script>
 
 		</body>
 </html>

@@ -3,7 +3,7 @@
   <head>
    <link rel="stylesheet" href="W3.css">
    <style>
-	  h1, h2, h3, p, a {
+	  h1, h2, h3, p, a, button {
                         font-family: 'Times New Roman', Times, serif
                     }
 
@@ -12,91 +12,155 @@
                     justify-content: center;
                     align-items: center;
                 }
+
+				.slideshow-container {
+                position: relative;
+                max-width: 100%;
+                height: 400px;
+                overflow: hidden;
+                }
+
+                .mySlides {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;                 
+                transition: opacity 3s ease; 
+                z-index: 0;                 
+                }
+
+                .mySlides.active {
+                opacity: 1;
+                z-index: 0;                  
+                }
+
+                /* Dark overlay */
+                .dark-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.45);
+                    z-index: 1;
+                }
+
+                /* Text overlay stays on top */
+                .w3-display-middle {
+                    z-index: 2;
+                }
+
+                /* Force the images to be the same size */
+                .artist-img {
+                    width: 100%;
+                    height: 250px;          
+                    object-fit: cover;      
+                    border-radius: 6px;
+                    display: block;
+                }
+
+                .artist-grid .artist-card {
+                    width: 24%;             
+                    display: inline-block;
+                    margin: 0.5%;
+                    position: relative;
+                }
+
+/* Overlay hidden by default */
+.artist-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    color: white;
+    background: rgba(50,50,50,0.55); /* Soft grayish dark overlay */
+    transition: opacity 0.3s ease;
+    border-radius: 6px;
+}
+
+/* Show text + gray darkening on hover */
+.artist-card:hover .artist-overlay {
+    opacity: 1;
+}
+
+/* Responsive for tablets/phones */
+@media (max-width: 900px) {
+    .artist-grid .artist-card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 600px) {
+    .artist-grid .artist-card {
+        width: 98%;
+    }
+}
 
    </style>	
   </head>
   <body>
-	<div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main menu">
-		<a href="index.html" class="w3-bar-item w3-button">Home</a>
-		<a href="TopicPage1.html"class="w3-bar-item w3-button" >Artists</a>
-		<a href="RefNResource.html"class="w3-bar-item w3-button" >Resources</a>
-		<a href="AboutPage.html" class="w3-bar-item w3-button">About ME</a>
-		<a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
-	</div>
-                
+	<div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main-menu">
+
+    <a href="index.html" class="w3-bar-item w3-button">Home</a>
+
+    <div class="w3-dropdown-hover">
+        <button class="w3-button">Artists ▾</button>
+        <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="TopicPage1.html" class="w3-bar-item w3-button">Gustave Courbet</a>
+            <a href="Page2.html" class="w3-bar-item w3-button">Ethan Becker</a>
+        </div>
+    </div>
+
+    <a href="RefNResource.html" class="w3-bar-item w3-button">Resources</a>
+    <a href="AboutPage.html" class="w3-bar-item w3-button">About Me</a>
+    <a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
+    <a href="KeyConcepts.html" class="w3-bar-item w3-button">Key Concepts</a>
+
+</div>
+         
+<div class="w3-display-container slideshow-container">
+
+  <!-- Slides -->
+  <img class="mySlides active" src="EthanBecker.jpg" style="width:100%">
+  <img class="mySlides" src="GustaveCorbet.jpg" style="width:100%">
+  <img class="mySlides" src="IanSu.png" style="width:100%">
+
+  <!-- Dark overlay (optional) -->
+  <div class="dark-overlay"></div>
+
+  <!-- TEXT OVERLAY -->
+  <div class="w3-display-middle w3-center w3-text-white w3-padding">
+      <h1 class="w3-xxlarge">Key Concepts</h1>
+  </div>
+
+</div>
+
+<div class="w3-container" style="max-width:600px; margin:auto; margin-top:40px;">
+
+  <ul class="w3-ul w3-hoverable w3-card-4 w3-round w3-light-grey w3-padding-large">
+    <li class="w3-padding-large">Artistic Inspiration & Influences</li>
+    <li class="w3-padding-large">Fundamentals of Drawing & Design</li>
+    <li class="w3-padding-large">Artist Spotlights & Profiles</li>
+    <li class="w3-padding-large">Art Resources & Learning Tools</li>
+    <li class="w3-padding-large">Creative Process & Personal Development</li>
+  </ul>
+</div>
+
+            
+<script src="slideshow.js"></script>
+
+
   </body>
 </html>
 
-<!DOCTYPE html>
-	<html>
-		<head>
-		<link rel="stylesheet" href="W3.css">
-		<style>
-                  h1, h2, h3, p, a {
-                        font-family: 'Times New Roman', Times, serif
-                    }
 
-                .center-nav {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-
-                </style>	
-		</head>		
-		 </head>
- 
-		 <body>
-			<div class="w3-bar w3-deep-purple w3-large center-nav w3-mobile" id="main menu">
-					<a href="index.html" class="w3-bar-item w3-button">Home</a>
-					<a href="TopicPage1.html"class="w3-bar-item w3-button" >Artists</a>
-					<a href="RefNResource.html"class="w3-bar-item w3-button" >Resources</a>
-					<a href="AboutPage.html" class="w3-bar-item w3-button">About ME</a>
-					<a href="Quiz.html" class="w3-bar-item w3-button">Quiz</a>
-			</div>
-                
-		
-            <h1 class="w3-container w3-center w3-deep-purple">Ethan Becker</h1>
-		
-			<div>
-				<img src="EthanBPhoto.png" alt="A photo of a smiling Ethan Becker during an interview" style="width:378px;height:400px; display:block;margin: auto;">	
-			</div>
-				
-				<br>
-
-				<div class="w3-flex" style="gap: 8px; align-items: flex-start;">
-
-					<div class="w3-deep-purple w3-third">
-
-						<h2 class="w3-center">About</h2>
-						<h5 style="align-content: baseline;">
-						Ethan Becker is an American visual development artist, storyteller, and animator originally from southeast Texas. 
-						He was inspired early on by Studio Ghibli films, nature, and fantasy worlds, which led him to pursue art as a profession. 
-						Becker attended high school art programs, won a scholarship to a community college, and later studied at the Concept Design Academy in Pasadena
-						<br>
-						<br>
-						Professionally, Ethan has worked on shows like Voltron: Legendary Defender and Batman: The Long Halloween, and with studios such as DreamWorks TV, Netflix, and Warner Bros. 
-						He’s also known for his teaching and content creation—he shares his process, critiques, and art tips heavily through YouTube and other online platforms, 
-						helping aspiring artists improve in design, environment art, and storytelling.
-						</h5>
-					</div>
-
-					<div class="w3-deep-purple w3-third">
-						<h2 class="w3-center">Primary Mediums</h2>
-							<ul>
-								<li>Digital Painting</li>
-								<li>2D animation software</li>
-								<li>Storyboarding tools</li>
-								<li>Sketching and drawing</li>
-								<li>Video editing and motion graphics</li>
-							</ul>
-					</div>
-				</div>
-             
-
-			
-
-       
-       
-		</body>
-	</html>
+<
